@@ -1,6 +1,7 @@
 using BeamPaths
 using Test
+using Revise
 
-@testset "BeamPaths.jl" begin
-    # Write your tests here.
+entr(["./test/testpath.jl"], [BeamPaths]) do
+    include(joinpath(@__DIR__, "testpath.jl"))
 end
