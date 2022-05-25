@@ -114,7 +114,7 @@ assetpath(::C) where C <: AbstractAperture = joinpath(@__DIR__, "../assets/compo
 assetpath(::C) where C <: AbstractSource = joinpath(@__DIR__, "../assets/components/source.svg")
 
 function render(filename::String, beampath::BeamPath; margin=100)
-    @show x0, xE, y0, yE = dimensions(beampath)
+    x0, xE, y0, yE = dimensions(beampath)
     offset = Point(x0, y0) - Point(margin, margin)
     x = xE - x0 + 2margin
     y = yE - y0 + 2margin
